@@ -1,0 +1,333 @@
+@import url('https://fonts.googleapis.com/css2?family=Overpass:wght@100;400;600;900&display=swap');
+
+body{
+    background-color: #0e0e0e;
+    color: #fff;
+    margin: 0;
+    font-family: 'Overpass', sans-serif;
+}
+
+img{
+    max-width: 100%;
+}
+
+.container{
+    padding-left: 120px;
+    padding-right: 120px;
+}
+
+section{
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+}
+
+.headerPadding{
+    margin-top: 200px;
+}
+
+.btn{
+    color: white;
+    border: 1px solid #f73cab;
+    line-height: 60px;
+    height: 60px;
+    border-radius: 12px;
+    box-shadow: 0 0 7px 0px white;
+    text-transform: uppercase;
+    font-size: 1.1rem;
+    text-align: center;
+    cursor: pointer;
+    display: inline-block;
+}
+
+header{
+
+    padding-top: 20px;
+    padding-bottom: 20px;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    .container{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .logo img{
+        height: 60px;
+    }
+    .btn{
+        &.connect{
+            height: 40px;
+            line-height: 40px;
+            width: 120px;
+            font-size: 0.9rem;
+            margin-left: 20px;
+        }
+    }
+
+    a{
+        color: white;
+        padding-left: 40px;
+        padding-right: 40px;
+        text-decoration: none;
+    }
+}
+
+.btn{
+    &.block{
+        display: block;
+    }
+}
+
+.swabox{
+    max-width: 100%;
+    width: 400px;
+    margin: auto;
+    background-color: #2d2d2d73;
+    border-radius: 20px;
+    padding: 40px;
+
+    .btn{
+        display: block;
+    }
+
+    .input{
+        background-color: #000000;
+        border-radius: 20px;
+        padding: 12px;
+        .top{
+            display: flex;
+
+            .ticker{
+                cursor: pointer;
+                width: 60px;
+                text-align: center;
+                img{
+                    width: 40px
+                }
+            }
+            input{
+                width: calc(100% - 60px);
+                background: #000000;
+                color: white;
+                font-size: 1.2rem;
+                border: 0;
+
+                &:active{
+                    outline: none;
+                }
+                &:focus{
+                    outline: none;
+                }
+            }
+        }
+        .in-dollars{
+            text-align: right;
+            margin-right: 12px;
+            font-size: 0.8rem;
+            color: #b5b5b5;
+        }
+    }
+}
+
+.modal{
+    position: fixed;
+    z-index: 100;
+    max-width: 80%;
+    width: 400px;
+    left: 0;
+    right: 0;
+    top: 10vh;
+    margin: auto;
+    background-color: black;
+    box-shadow: 0px 0px 17px 4px #731f5087;
+    border-radius: 20px;
+
+    .close{
+        float: right;
+        margin-right: 32px;
+        margin-top: 32px;
+        cursor: pointer;
+    }
+}
+
+.modal-bg{
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    background-color: black;
+    opacity: 0.5;
+    border-radius: 20px;
+    top: 0;
+    left:0;
+}
+
+.tokenSelector{
+    h3{
+        padding-left: 40px;
+        margin-top: 40px;
+    }
+    .lists{
+        max-height: 400px;
+        overflow: scroll;
+        .list{
+            padding: 20px 40px;
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+
+            .img{
+                width: 40px;
+            }
+
+            .details{
+                margin-left: 12px;
+                .ticker{
+                    color: #fff;
+                }
+
+                .name{
+                    color: #9a9a9a;
+                    font-size: 0.8rem;
+                }
+            }
+
+            &+.list{
+                border-top: 1px solid #2b2929;
+            }
+        }
+    }
+
+    .footer{
+        text-align: center;
+        padding: 20px;
+    }
+}
+
+
+.poolSelector{
+    padding: 20px;
+    background-color: #2d2d2d73;
+    border-radius: 20px;
+
+    .token{
+        vertical-align: middle;
+        display: inline-block;
+        padding-right: 12px;
+        padding-left: 12px;
+        img{
+            height: 32px;
+            vertical-align: middle;
+            margin-right: 8px;
+        }
+    }
+
+    .divider{
+        position: relative;
+        display: inline-block;
+        margin-left: 12px;
+        margin-right: 12px;
+        &::after{
+            content: "";
+            position: absolute;
+            background-color: #ffffff21;
+            height: 72px;
+            width: 2px;
+            top:-40px;
+            left: 0;;
+        }
+    }
+    input{
+        width: 100px;
+        height: 40px;
+        background-color: black;
+        border: 0;
+        &:active{
+            outline: none;
+        }
+        &:focus{
+            outline: none;
+        }
+    }
+    span{
+        margin-left: 12px;
+        margin-right: 12px;
+    }
+}
+
+
+.marketMaker{
+
+}
+.contract-list{
+    max-width: 100%;
+    width: 600px;
+    margin: auto;
+    margin-top: 60px;
+}
+
+.contract{
+    padding: 20px;
+    background-color: #2d2d2d73;
+    border-radius: 20px;
+    cursor: pointer;
+
+    .slippage{
+        text-align: right;
+        float: right;
+        color: chartreuse;
+        div{
+            color: white;
+            font-size: 1.2rem;
+        }
+    }
+
+    .volume{
+        text-align: right;
+        float: right;
+        margin-top: 28px;
+        font-size: 1.2rem;
+    }
+
+    .amount{
+        color: #ccc;
+        font-size: 0.8rem;
+        div{
+            font-size: 1.4rem;
+            color: white;
+        }
+    }
+
+    .tvl{
+        margin-top: 20px;
+        color: #ccc;
+        font-size: 0.8rem;
+        div{
+            font-size: 1.4rem;
+            color: white;
+        }
+    }
+
+
+    &+.contract{
+        margin-top: 20px;
+    }
+}
+
+
+input{
+    width: calc(100% - 40px);
+    background: #1d1d1d;
+    border: 0;
+    border-radius: 20px;
+    color: white;
+    padding: 0 20px;
+    height: 72px;
+    font-size: 1.2rem;
+    &:active{
+        outline: none;
+    }
+    &:focus{
+        outline: none;
+    }
+}
