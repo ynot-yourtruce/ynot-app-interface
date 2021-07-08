@@ -95,19 +95,31 @@ header{
         background-color: #000000;
         border-radius: 20px;
         padding: 12px;
+
         .top{
             display: flex;
+            align-items: center;
 
             .ticker{
                 cursor: pointer;
-                width: 60px;
+                width: 140px;
                 text-align: center;
                 img{
-                    width: 40px
+                    width: 40px;
+                    vertical-align: middle;
+                }
+                span{
+                    margin-left: 8px;
+                    display: inline-block;
+                    svg{
+                        position: relative;
+                        height: 14px;
+                        top: 3px;
+                    }
                 }
             }
             input{
-                width: calc(100% - 60px);
+                width: calc(100% - 140px);
                 background: #000000;
                 color: white;
                 font-size: 1.2rem;
@@ -122,8 +134,7 @@ header{
             }
         }
         .in-dollars{
-            text-align: right;
-            margin-right: 12px;
+            margin-left: 12px;
             font-size: 0.8rem;
             color: #b5b5b5;
         }

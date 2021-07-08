@@ -1,5 +1,6 @@
 import { Component } from "react";
 import SelectToken from "./SelectToken";
+import { AiFillCaretDown } from "react-icons/ai";
 
 class Input extends Component {
   state = { tokenSelector: false };
@@ -18,13 +19,16 @@ class Input extends Component {
         )}
         <div className="input">
           <div className="top">
+            <input type="text" autoComplete="off" placeholder="1" />
             <div className="ticker" onClick={this.openTokenSelector}>
               <img
                 src="https://s2.coinmarketcap.com/static/img/coins/64x64/1.png"
                 alt=""
               />
+              <span>
+                BTC <AiFillCaretDown />
+              </span>
             </div>
-            <input type="text" autoComplete="off" placeholder="1" />
           </div>
           <div className="in-dollars">$200,000</div>
         </div>
