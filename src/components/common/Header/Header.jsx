@@ -16,7 +16,9 @@ class Header extends Component {
             </Link>
           </div>
           <div>
-            <Link to="/market-makers">Market Makers</Link>
+            <Link to="/market-makers">Trade</Link>
+            <Link to="/liquidity">Add Liquidity</Link>
+            <Link to="/staking">Staking</Link>
             <div className="btn connect">CONNECT</div>
           </div>
         </div>
