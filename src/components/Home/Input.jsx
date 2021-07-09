@@ -1,6 +1,7 @@
 import { Component } from "react";
 import SelectToken from "./SelectToken";
 import { AiFillCaretDown } from "react-icons/ai";
+import { connect } from "react-redux";
 
 class Input extends Component {
   state = { tokenSelector: false };
@@ -12,22 +13,30 @@ class Input extends Component {
   };
 
   render() {
+    const token =
+      this.props.selector == "tokenA" ? this.props.tokenA : this.props.tokenB;
     return (
       <>
         {this.state.tokenSelector && (
-          <SelectToken closeTokenSelector={this.openTokenSelector} />
+          <SelectToken
+            closeTokenSelector={this.openTokenSelector}
+            selector={this.props.selector}
+          />
         )}
         <div className="input">
           <div className="top">
             <input type="text" autoComplete="off" placeholder="1" />
             <div className="ticker" onClick={this.openTokenSelector}>
-              <img
-                src="https://s2.coinmarketcap.com/static/img/coins/64x64/1.png"
-                alt=""
-              />
-              <span>
-                BTC <AiFillCaretDown />
-              </span>
+              {token ? (
+                <>
+                  <img src={token.logo} alt="" />
+                  <span>
+                    {token.ticker} <AiFillCaretDown />
+                  </span>
+                </>
+              ) : (
+                <span className="st">Select token</span>
+              )}
             </div>
           </div>
           <div className="in-dollars">$200,000</div>
@@ -37,4 +46,20 @@ class Input extends Component {
   }
 }
 
-export default Input;
+function mapStateToProps(state) {
+  const { tokenA, tokenB } = state.tokenSelector;
+
+  return {
+    tokenA,
+    tokenB,
+  };
+}
+
+function mapDispatchToProps(dispatch) {
+  return {
+    // checkIfAlreadyConnected: () => dispatch(checkIfAlreadyConnected()),
+    // connectWallet: () => dispatch(connectWallet()),
+  };
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Input);

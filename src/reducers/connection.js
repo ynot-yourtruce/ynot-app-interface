@@ -13,6 +13,7 @@ export default function(state = initialState, action) {
     switch (action.type) {
         case CONNECTION_RESULT:
             return {
+                ...state,
                 userConnection: action.web3,
                 userAccount: action.account
             }

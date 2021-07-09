@@ -1,0 +1,17 @@
+[
+    {
+        "name": "Ethereum",
+        "ticker": "ETH",
+        "logo": "https://s2.coinmarketcap.com/static/img/coins/64x64/1027.png"
+    },
+    {
+        "name": "Bitcoin",
+        "ticker": "BTC",
+        "logo": "https://s2.coinmarketcap.com/static/img/coins/64x64/1.png"
+    },
+    {
+        "name": "Tether",
+        "ticker": "USDT",
+        "logo": "https://s2.coinmarketcap.com/static/img/coins/64x64/825.png"
+    }
+]
