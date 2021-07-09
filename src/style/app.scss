@@ -55,6 +55,25 @@ header{
     .logo img{
         height: 60px;
     }
+    .logo{
+        .mirror{
+            display: inline-block;
+            -moz-transform: scale(-1, 1);
+            -webkit-transform: scale(-1, 1);
+            -o-transform: scale(-1, 1);
+            -ms-transform: scale(-1, 1);
+            transform: scale(-1, 1);
+        }
+        a{
+            font-size: 32px;
+            text-decoration: none;
+            color: white;
+        }
+        .f{
+            color: #3de6f9;
+            font-size: 18px;
+        }
+    }
     .btn{
         &.connect{
             height: 40px;

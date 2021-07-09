@@ -23,10 +23,12 @@ class Header extends Component {
         <div className="container">
           <div className="logo">
             <Link to="/">
-              <img
+              Y<span className="mirror">N</span>OT{" "}
+              <span className="f">finance</span>
+              {/* <img
                 src="https://yourtruce.com/assets/img/logo-invert.png"
                 alt=""
-              />
+              /> */}
             </Link>
           </div>
           <div>
