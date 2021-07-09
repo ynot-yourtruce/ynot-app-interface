@@ -65,7 +65,7 @@ header{
         }
     }
 
-    a{
+    a.link{
         color: white;
         padding-left: 40px;
         padding-right: 40px;
@@ -141,7 +141,7 @@ header{
     }
 }
 
-.modal{
+.modal-yt{
     position: fixed;
     z-index: 100;
     max-width: 80%;
@@ -342,3 +342,14 @@ input{
         outline: none;
     }
 }
+
+.wallet_provider__wrapper{
+    .modal{
+        .m__header{
+            position: relative;
+        }
+        .m__close{
+            cursor: pointer;
+        }
+    }
+} 

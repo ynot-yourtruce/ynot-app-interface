@@ -7,7 +7,7 @@ class SelectToken extends Component {
     return (
       <>
         <div className="modal-bg" onClick={this.props.closeTokenSelector}></div>
-        <div className="modal tokenSelector">
+        <div className="modal-yt tokenSelector">
           <div className="close" onClick={this.props.closeTokenSelector}>
             <AiOutlineClose />
           </div>

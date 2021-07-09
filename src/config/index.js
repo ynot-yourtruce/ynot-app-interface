@@ -1,0 +1,1 @@
+export const ALLOWED_NETWORK_ID = 3;

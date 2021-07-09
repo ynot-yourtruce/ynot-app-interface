@@ -1,8 +1,22 @@
 import { Component } from "react";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import {
+  checkIfAlreadyConnected,
+  connectWallet,
+} from "../../../actions/connection";
+import { connect } from "react-redux";
 
 class Header extends Component {
   state = {};
+
+  componentDidMount() {
+    this.props.checkIfAlreadyConnected();
+  }
+
+  connect = () => {
+    this.props.connectWallet();
+  };
+
   render() {
     return (
       <header>
@@ -16,10 +30,22 @@ class Header extends Component {
             </Link>
           </div>
           <div>
-            <Link to="/market-makers">Trade</Link>
-            <Link to="/liquidity">Add Liquidity</Link>
-            <Link to="/staking">Staking</Link>
-            <div className="btn connect">CONNECT</div>
+            <Link className="link" to="/market-makers">
+              Free Trading
+            </Link>
+            <Link className="link" to="/liquidity">
+              Add Liquidity
+            </Link>
+            <Link className="link" to="/staking">
+              Staking
+            </Link>
+            {this.props.userConnection ? (
+              <div className="btn connect">CONNECTED</div>
+            ) : (
+              <div className="btn connect" onClick={this.connect}>
+                CONNECT
+              </div>
+            )}
           </div>
         </div>
       </header>
@@ -27,4 +53,22 @@ class Header extends Component {
   }
 }
 
-export default Header;
+function mapStateToProps(state) {
+  const { userConnection, userAccount, loading, error } = state.connection;
+
+  return {
+    userConnection,
+    userAccount,
+    error,
+    loading,
+  };
+}
+
+function mapDispatchToProps(dispatch) {
+  return {
+    checkIfAlreadyConnected: () => dispatch(checkIfAlreadyConnected()),
+    connectWallet: () => dispatch(connectWallet()),
+  };
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Header);
