@@ -1,3 +1,4 @@
 export const CONNECTION_RESULT = "CONNECTION_RESULT";
 
 export const SELECT_TOKEN = "SELECT_TOKEN";
+export const SELECT_PAIR = "SELECT_PAIR";

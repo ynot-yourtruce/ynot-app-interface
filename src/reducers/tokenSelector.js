@@ -1,10 +1,13 @@
-import { SELECT_TOKEN } from "../config/constants";
+import { SELECT_PAIR, SELECT_TOKEN } from "../config/constants";
 import tokenList from "../config/tokenList.json";
+import pairList from "../config/pairList.json";
 
 const initialState = {
   tokenA: null,
-  tokenB: null,  
+  tokenB: null,
+  pair: null,
   tokenList: tokenList,
+  pairList: pairList,
   loading: false,
   error: false
 };
@@ -17,6 +20,11 @@ export default function(state = initialState, action) {
           ...state,
           [action.tokenType] : action.token
         }
+        case SELECT_PAIR:
+          return {
+            ...state,
+            pair: action.pair
+          }
         default:
             return state;
     }

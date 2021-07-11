@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Overpass:wght@100;400;600;900&display=swap');
 
 body{
-    background-color: #0e0e0e;
+    background-color: #303030;
     color: #fff;
     margin: 0;
     font-family: 'Overpass', sans-serif;
@@ -27,12 +27,12 @@ section{
 }
 
 .btn{
-    color: white;
-    border: 1px solid #f73cab;
+    color: #3de6f9;
+    border: 1px solid #3de6f9;
     line-height: 60px;
     height: 60px;
     border-radius: 12px;
-    box-shadow: 0 0 7px 0px white;
+    // box-shadow: 0 0 7px 0px white;
     text-transform: uppercase;
     font-size: 1.1rem;
     text-align: center;
@@ -102,70 +102,71 @@ header{
     max-width: 100%;
     width: 400px;
     margin: auto;
-    background-color: #2d2d2d73;
+    background-color: #232323;
     border-radius: 20px;
     padding: 40px;
 
     .btn{
         display: block;
     }
+}
 
-    .input{
-        background-color: #000000;
-        border-radius: 20px;
-        padding: 12px;
+.input{
+    background-color: #303030;
+    border-radius: 20px;
+    padding: 12px;
 
-        .top{
-            display: flex;
-            align-items: center;
+    .top{
+        display: flex;
+        align-items: center;
 
-            .ticker{
-                cursor: pointer;
-                width: 160px;
-                text-align: center;
-                .st{
-                    background-color: #3d3d3d;
-                    padding: 8px 16px;
-                    border-radius: 20px;
-                    font-size: 14px;
-                    text-transform: uppercase;
-                }
-                img{
-                    width: 40px;
-                    vertical-align: middle;
-                }
-                span{
-                    margin-left: 8px;
-                    display: inline-block;
-                    svg{
-                        position: relative;
-                        height: 14px;
-                        top: 3px;
-                    }
-                }
+        .ticker{
+            cursor: pointer;
+            width: 160px;
+            text-align: center;
+            .st{
+                background-color: #3d3d3d;
+                padding: 8px 16px;
+                border-radius: 20px;
+                font-size: 14px;
+                text-transform: uppercase;
             }
-            input{
-                width: calc(100% - 160px);
-                background: #000000;
-                color: white;
-                font-size: 1.2rem;
-                border: 0;
-
-                &:active{
-                    outline: none;
-                }
-                &:focus{
-                    outline: none;
+            img{
+                width: 40px;
+                vertical-align: middle;
+            }
+            span{
+                margin-left: 8px;
+                display: inline-block;
+                svg{
+                    position: relative;
+                    height: 14px;
+                    top: 3px;
                 }
             }
         }
-        .in-dollars{
-            margin-left: 12px;
-            font-size: 0.8rem;
-            color: #b5b5b5;
+        input{
+            width: calc(100% - 160px);
+            background: #303030;
+            color: white;
+            font-size: 1.2rem;
+            border: 0;
+
+            &:active{
+                outline: none;
+            }
+            &:focus{
+                outline: none;
+            }
         }
     }
+    .in-dollars{
+        margin-left: 12px;
+        font-size: 0.8rem;
+        color: #b5b5b5;
+    }
 }
+
 
 .modal-yt{
     position: fixed;
@@ -176,16 +177,24 @@ header{
     right: 0;
     top: 10vh;
     margin: auto;
-    background-color: black;
-    box-shadow: 0px 0px 17px 4px #731f5087;
+    background-color: #232323;
     border-radius: 20px;
-
+     animation: dropFromTop 0.2s normal forwards ease-in-out;
     .close{
         float: right;
         margin-right: 32px;
-        margin-top: 32px;
+        margin-top: 42px;
         cursor: pointer;
     }
+}
+
+@keyframes dropFromTop {
+  0% {
+    transform: translateY(-200px);
+  }
+  100% {
+    transform: translateY(0);
+  }
 }
 
 .modal-bg{
@@ -193,8 +202,7 @@ header{
     width: 100vw;
     height: 100vh;
     background-color: black;
-    opacity: 0.7;
-    border-radius: 20px;
+    opacity: 0.6;
     top: 0;
     left:0;
 }
@@ -230,7 +238,7 @@ header{
             }
 
             &+.list{
-                border-top: 1px solid #2b2929;
+                border-top: 1px solid #353535;
             }
         }
     }
@@ -244,7 +252,7 @@ header{
 
 .poolSelector{
     padding: 20px;
-    background-color: #2d2d2d73;
+    background-color: #232323;
     border-radius: 20px;
 
     .token{
@@ -293,21 +301,46 @@ header{
 }
 
 
-.marketMaker{
+// .marketMaker{
 
+// }
+
+.row{
+    display: flex;
+    .col{
+        width: 50%;
+        &+.col{
+            margin-left: 20px;
+        }
+    }
 }
+
 .contract-list{
-    max-width: 100%;
-    width: 600px;
     margin: auto;
     margin-top: 60px;
 }
 
 .contract{
-    padding: 20px;
-    background-color: #2d2d2d73;
-    border-radius: 20px;
-    cursor: pointer;
+
+    max-width: 100%;
+    width: 500px;
+    margin: auto;
+
+    .body{
+        padding: 20px;
+        background-color: #232323;
+        border-radius: 20px;
+        // cursor: pointer;
+    }
+
+    .action{
+        margin-top: 20px;
+        display: flex;
+        justify-content: space-between;
+        .btn{
+            width: calc(50% - 20px);
+        }
+    }
 
     .slippage{
         text-align: right;
@@ -344,13 +377,27 @@ header{
             color: white;
         }
     }
+}
 
-
-    &+.contract{
+.position{
+    // padding: 20px;
+    h3{
+        padding-left: 40px;
+        margin-top: 40px;
+    }
+    .btn{
         margin-top: 20px;
+        display: block;
     }
 }
 
+.cursorP{
+    cursor: pointer;
+    svg{
+        position: relative;
+        top: 3px;
+    }
+}
 
 input{
     width: calc(100% - 40px);

@@ -1,6 +1,7 @@
 import { Component } from "react";
 import Header from "../components/common/Header/Header";
-import SelectToken from "../components/Home/SelectToken";
+import Settings from "../components/MarketMakers/Settings";
+import { connect } from "react-redux";
 
 class Liquidity extends Component {
   state = {};
@@ -8,12 +9,46 @@ class Liquidity extends Component {
     return (
       <>
         <Header />
-        {this.state.tokenSelector && (
-          <SelectToken closeTokenSelector={this.openTokenSelector} />
-        )}
         <div className="container">
           <div className="headerPadding">
-            <h1>Liquidity</h1>
+            <div className="marketMaker">
+              <Settings />
+
+              <div className="contract-list">
+                {this.props.pair && (
+                  <div className="swabox">
+                    <div className="input">
+                      <div className="top">
+                        <input type="text" autoComplete="off" placeholder="1" />
+                        <div className="ticker">
+                          <img src={this.props.pair.logo_1} alt="" />
+                          <span>{this.props.pair.ticker_2}</span>
+                        </div>
+                      </div>
+                      <div className="in-dollars">$0</div>
+                    </div>
+
+                    <br />
+                    <br />
+
+                    <div className="input">
+                      <div className="top">
+                        <input type="text" autoComplete="off" placeholder="1" />
+                        <div className="ticker">
+                          <img src={this.props.pair.logo_2} alt="" />
+                          <span>{this.props.pair.ticker_2}</span>
+                        </div>
+                      </div>
+                      <div className="in-dollars">$0</div>
+                    </div>
+
+                    <br />
+                    <br />
+                    <div className="btn">ADD LIQUIDITY</div>
+                  </div>
+                )}
+              </div>
+            </div>
           </div>
         </div>
       </>
@@ -21,4 +56,16 @@ class Liquidity extends Component {
   }
 }
 
-export default Liquidity;
+function mapStateToProps(state) {
+  const { pair } = state.tokenSelector;
+
+  return {
+    pair,
+  };
+}
+
+// function mapDispatchToProps(dispatch) {
+//   return {};
+// }
+
+export default connect(mapStateToProps, null)(Liquidity);

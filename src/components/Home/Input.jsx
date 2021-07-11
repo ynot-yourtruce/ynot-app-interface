@@ -15,6 +15,7 @@ class Input extends Component {
   render() {
     const token =
       this.props.selector == "tokenA" ? this.props.tokenA : this.props.tokenB;
+
     return (
       <>
         {this.state.tokenSelector && (
@@ -23,6 +24,7 @@ class Input extends Component {
             selector={this.props.selector}
           />
         )}
+
         <div className="input">
           <div className="top">
             <input type="text" autoComplete="off" placeholder="1" />
@@ -39,7 +41,7 @@ class Input extends Component {
               )}
             </div>
           </div>
-          <div className="in-dollars">$200,000</div>
+          <div className="in-dollars">$0</div>
         </div>
       </>
     );
