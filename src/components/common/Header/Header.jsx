@@ -32,12 +32,14 @@ class Header extends Component {
             </Link>
           </div>
           <div>
-            <Link className="link" to="/market-makers">
-              Free Trading
-            </Link>
-            <Link className="link" to="/liquidity">
-              Add Liquidity
-            </Link>
+            <a
+              className="link"
+              href="https://t.me/yourtruceofficial"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Community
+            </a>
             <Link className="link" to="/staking">
               Staking
             </Link>

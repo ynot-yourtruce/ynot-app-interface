@@ -1,7 +1,9 @@
 import Home from "../pages/Home";
 import Liquidity from "../pages/Liquidity";
-import MarketMakers from "../pages/MarketMakers";
+import Trading from "../pages/Trading";
 import PoolDetails from "../pages/PoolDetails";
+import Staking from "../pages/Staking";
+import Swap from "../pages/Swap";
 
 export const routes = [
     {
@@ -10,9 +12,9 @@ export const routes = [
         component: Home
     },
     {
-        path: "/market-makers",
+        path: "/trading",
         exact: true,
-        component: MarketMakers
+        component: Trading
     },
     {
         path: "/liquidity",
@@ -20,8 +22,18 @@ export const routes = [
         component: Liquidity
     },
     {
+        path: "/swap",
+        exact: true,
+        component: Swap
+    },
+    {
         path: "/pool/:address",
         exact: true,
         component: PoolDetails
+    },
+    {
+        path: "/staking",
+        exact: true,
+        component: Staking
     }
 ];

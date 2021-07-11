@@ -4,7 +4,7 @@ import PoolCard from "../components/MarketMakers/PoolCard";
 import Settings from "../components/MarketMakers/Settings";
 import { connect } from "react-redux";
 
-class MarketMakers extends Component {
+class Trading extends Component {
   state = {};
 
   render() {
@@ -48,4 +48,4 @@ function mapStateToProps(state) {
 //   return {};
 // }
 
-export default connect(mapStateToProps, null)(MarketMakers);
+export default connect(mapStateToProps, null)(Trading);

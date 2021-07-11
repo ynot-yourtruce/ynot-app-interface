@@ -1,13 +1,10 @@
 import { Component } from "react";
 import Header from "../components/common/Header/Header";
-import { Link } from "react-router-dom";
+import Input from "../components/Home/Input";
 import { connect } from "react-redux";
 
-class Home extends Component {
+class Swap extends Component {
   state = {};
-
-  componentDidMount() {}
-
   render() {
     return (
       <>
@@ -15,15 +12,16 @@ class Home extends Component {
         <div className="container">
           <section>
             <div className="swabox">
-              <Link className="link" to="/swap">
-                Swap
-              </Link>
-              <Link className="link" to="/trading">
-                Free Trading
-              </Link>
-              <Link className="link" to="/liquidity">
-                Liquidity
-              </Link>
+              <Input selector="tokenA" />
+
+              <br />
+              <br />
+
+              <Input selector="tokenB" />
+
+              <br />
+              <br />
+              <div className="btn">SWAP</div>
             </div>
           </section>
         </div>
@@ -52,4 +50,4 @@ function mapDispatchToProps(dispatch) {
   };
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(Home);
+export default connect(mapStateToProps, mapDispatchToProps)(Swap);
