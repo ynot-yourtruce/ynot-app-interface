@@ -11,10 +11,6 @@ img{
     max-width: 100%;
 }
 
-.container{
-    padding-left: 120px;
-    padding-right: 120px;
-}
 
 section{
     min-height: 100vh;
@@ -32,7 +28,7 @@ section{
     line-height: 60px;
     height: 60px;
     border-radius: 12px;
-    // box-shadow: 0 0 7px 0px white;
+    padding: 0;
     text-transform: uppercase;
     font-size: 1.1rem;
     text-align: center;
@@ -116,8 +112,8 @@ header{
     color: white;
     text-decoration: none;
     svg{
-        position: relative;
-        top: 4px;
+        // position: relative;
+        // top: 4px;
         font-size: 20px;
         margin-right: 4px;
         // font-size: 24px;
@@ -186,9 +182,9 @@ header{
                 margin-left: 8px;
                 display: inline-block;
                 svg{
-                    position: relative;
+                    // position: relative;
                     height: 14px;
-                    top: 3px;
+                    // top: 3px;
                 }
             }
         }
@@ -441,8 +437,8 @@ header{
 .cursorP{
     cursor: pointer;
     svg{
-        position: relative;
-        top: 3px;
+        // position: relative;
+        // top: 3px;
     }
 }
 

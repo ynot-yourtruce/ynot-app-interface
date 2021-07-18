@@ -1,4 +1,5 @@
 import {Component} from "react";
+import 'bootstrap/dist/css/bootstrap.min.css';
 import "./style/app.scss";
 import {
   BrowserRouter as Router,Redirect,
