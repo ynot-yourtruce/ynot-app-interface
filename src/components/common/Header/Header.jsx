@@ -25,10 +25,6 @@ class Header extends Component {
             <Link to="/">
               Y<span className="mirror">N</span>OT{" "}
               <span className="f">finance</span>
-              {/* <img
-                src="https://yourtruce.com/assets/img/logo-invert.png"
-                alt=""
-              /> */}
             </Link>
           </div>
           <div>

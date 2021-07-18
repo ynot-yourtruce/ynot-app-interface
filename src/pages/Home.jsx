@@ -14,7 +14,7 @@ class Home extends Component {
         <Header />
         <div className="container">
           <section>
-            <div className="swabox">
+            <div className="boxes">
               <Link className="link" to="/swap">
                 Swap
               </Link>

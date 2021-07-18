@@ -2,6 +2,7 @@ import { Component } from "react";
 import Header from "../components/common/Header/Header";
 import Input from "../components/Home/Input";
 import { connect } from "react-redux";
+import Back from "../components/common/Back";
 
 class Swap extends Component {
   state = {};
@@ -11,17 +12,20 @@ class Swap extends Component {
         <Header />
         <div className="container">
           <section>
-            <div className="swabox">
-              <Input selector="tokenA" />
+            <div className="sbox">
+              <Back />
+              <div className="swabox">
+                <Input selector="tokenA" />
 
-              <br />
-              <br />
+                <br />
+                <br />
 
-              <Input selector="tokenB" />
+                <Input selector="tokenB" />
 
-              <br />
-              <br />
-              <div className="btn">SWAP</div>
+                <br />
+                <br />
+                <div className="btn">SWAP</div>
+              </div>
             </div>
           </section>
         </div>

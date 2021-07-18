@@ -3,6 +3,7 @@ import Header from "../components/common/Header/Header";
 import PoolCard from "../components/MarketMakers/PoolCard";
 import Settings from "../components/MarketMakers/Settings";
 import { connect } from "react-redux";
+import Back from "../components/common/Back";
 
 class Trading extends Component {
   state = {};
@@ -13,6 +14,7 @@ class Trading extends Component {
         <Header />
         <div className="container">
           <div className="headerPadding">
+            <Back />
             <div className="marketMaker">
               <Settings />
 
