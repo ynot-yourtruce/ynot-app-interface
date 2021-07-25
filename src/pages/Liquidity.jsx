@@ -3,9 +3,31 @@ import Header from "../components/common/Header/Header";
 import Settings from "../components/MarketMakers/Settings";
 import { connect } from "react-redux";
 import Back from "../components/common/Back";
+import { addLiquidity, getLiquidity } from "../actions/pairPool";
 
 class Liquidity extends Component {
   state = {};
+
+  getLiquidity = async (pair) => {
+    // await getLiquidity(
+    //   this.props.pair.address,
+    //   this.props.userConnection,
+    //   this.props.userAccount
+    // );
+
+    await addLiquidity(
+      this.props.pair.address,
+      this.props.userConnection,
+      this.props.userAccount
+    );
+
+    await getLiquidity(
+      this.props.pair.address,
+      this.props.userConnection,
+      this.props.userAccount
+    );
+  };
+
   render() {
     return (
       <>
@@ -52,10 +74,11 @@ class Liquidity extends Component {
                         </div>
                         <div className="in-dollars">$0</div>
                       </div>
-
                       <br />
                       <br />
-                      <div className="btn">ADD LIQUIDITY</div>
+                      <div className="btn" onClick={this.getLiquidity}>
+                        ADD LIQUIDITY
+                      </div>
                     </div>
                   </div>
                 )}
@@ -69,10 +92,13 @@ class Liquidity extends Component {
 }
 
 function mapStateToProps(state) {
+  const { userConnection, userAccount } = state.connection;
   const { pair } = state.tokenSelector;
 
   return {
     pair,
+    userConnection,
+    userAccount,
   };
 }
 

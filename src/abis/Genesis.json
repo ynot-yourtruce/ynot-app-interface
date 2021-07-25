@@ -1,20 +1,33 @@
 [
     {
-        "inputs": [
+      "inputs": [
         {
-            "internalType": "address",
-            "name": "_tokenA",
-            "type": "address"
+          "internalType": "address",
+          "name": "_tokenA",
+          "type": "address"
         },
         {
-            "internalType": "address",
-            "name": "_tokenB",
-            "type": "address"
+          "internalType": "address",
+          "name": "_tokenB",
+          "type": "address"
         }
-        ],
-        "name": "createNewPair",
-        "outputs": [],
-        "stateMutability": "nonpayable",
-        "type": "function"
+      ],
+      "name": "createNewPair",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "new_factory",
+          "type": "address"
+        }
+      ],
+      "name": "setFactory",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
     }
-]
+  ]

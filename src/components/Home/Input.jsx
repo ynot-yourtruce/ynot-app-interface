@@ -27,7 +27,14 @@ class Input extends Component {
 
         <div className="input">
           <div className="top">
-            <input type="text" autoComplete="off" placeholder="1" />
+            <input
+              type="text"
+              autoComplete="off"
+              placeholder="1"
+              onChange={this.props.onChange}
+              disabled={this.props.disabled}
+              value={this.props.value}
+            />
             <div className="ticker" onClick={this.openTokenSelector}>
               {token ? (
                 <>

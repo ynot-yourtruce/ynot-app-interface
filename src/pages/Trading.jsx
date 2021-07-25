@@ -16,9 +16,7 @@ class Trading extends Component {
           <div className="headerPadding">
             <Back />
             <div className="marketMaker">
-              <div className="sbox">
-                <Settings />
-              </div>
+              <Settings />
 
               <div className="contract-list">
                 {this.props.pair && (

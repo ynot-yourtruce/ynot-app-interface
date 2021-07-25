@@ -3,12 +3,14 @@
         "ticker_1": "ETH",
         "ticker_2": "USDT",
         "logo_1": "https://s2.coinmarketcap.com/static/img/coins/64x64/1027.png",
-        "logo_2": "https://s2.coinmarketcap.com/static/img/coins/64x64/825.png"
+        "logo_2": "https://s2.coinmarketcap.com/static/img/coins/64x64/825.png",
+        "address": "0xD5fc065D42C5ED02f1080baE9EE6940Dac14F39F"
     },
     {
         "ticker_1": "BTC",
         "ticker_2": "USDT",
         "logo_1": "https://s2.coinmarketcap.com/static/img/coins/64x64/1.png",
-        "logo_2": "https://s2.coinmarketcap.com/static/img/coins/64x64/825.png"
+        "logo_2": "https://s2.coinmarketcap.com/static/img/coins/64x64/825.png",
+        "address": "0xD5fc065D42C5ED02f1080baE9EE6940Dac14F39F"
     }
 ]
