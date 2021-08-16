@@ -46,6 +46,10 @@ a:hover{
         border-color: #f93d94;
         color: #f93d94;
     }
+    &:hover{
+        color: white;
+        border-color: white;
+    }
 }
 
 header{
@@ -188,6 +192,8 @@ header{
             }
             img{
                 width: 40px;
+                height: 40px;
+                border-radius: 50%;
                 vertical-align: middle;
             }
             span{
@@ -278,6 +284,14 @@ header{
 
             .img{
                 width: 40px;
+                height: 40px;
+                border-radius: 50%;
+                overflow: hidden;
+                img{
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                }
             }
 
             .details{
@@ -317,6 +331,8 @@ header{
         padding-left: 12px;
         img{
             height: 32px;
+            width: 32px;
+            border-radius: 50%;
             vertical-align: middle;
             margin-right: 8px;
         }

@@ -53,12 +53,6 @@ class Home extends Component {
                 Liquidity
               </Link>
               <br />
-              <div
-                className="btn display-block"
-                onClick={this.createGenesisPair}
-              >
-                Create
-              </div>
             </div>
           </section>
         </div>

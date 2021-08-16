@@ -1,16 +1,16 @@
 [
     {
-        "name": "Ethereum",
-        "ticker": "ETH",
+        "name": "Demo Token",
+        "ticker": "DT",
         "decimal": 18,
-        "logo": "https://s2.coinmarketcap.com/static/img/coins/64x64/1027.png",
-        "address": "0x198c09598595cB12E0966ef0Dec2aeCF7E836f54"
+        "logo": "/assets/img/D.png",
+        "address": "0xef693c48200A1ccC7e5022d98c3A1E8e6C01645A"
     },
     {
-        "name": "Bitcoin",
-        "ticker": "BTC",
+        "name": "Demo Token 2",
+        "ticker": "DT2",
         "decimal": 18,
-        "logo": "https://s2.coinmarketcap.com/static/img/coins/64x64/1.png",
-        "address": "0x0B875130478443Ef762E8A8906891c274F426a7B"
+        "logo": "/assets/img/D2.png",
+        "address": "0x19115627d5DA9455C32F1097A55ae923db9628Fa"
     }
 ]

@@ -1,8 +1,19 @@
 import { Component } from "react";
 import { AiOutlineClose } from "react-icons/ai";
+import { placeOrder } from "../../actions/trading";
+import { connect } from "react-redux";
 
 class OpenPosition extends Component {
   state = {};
+
+  addOrder = () => {
+    placeOrder(
+      "0x198c09598595cB12E0966ef0Dec2aeCF7E836f54",
+      // "0x0B875130478443Ef762E8A8906891c274F426a7B",
+      this.props.userConnection,
+      this.props.userAccount
+    );
+  };
 
   render() {
     const token =
@@ -29,7 +40,9 @@ class OpenPosition extends Component {
               </div>
               <div className="in-dollars">$0</div>
             </div>
-            <div className="btn btn-block">{this.props.mode}</div>
+            <div className="btn btn-block" onClick={this.addOrder}>
+              {this.props.mode}
+            </div>
           </div>
         </div>
       </>
@@ -37,4 +50,19 @@ class OpenPosition extends Component {
   }
 }
 
-export default OpenPosition;
+function mapStateToProps(state) {
+  const { pair } = state.tokenSelector;
+  const { userConnection, userAccount } = state.connection;
+
+  return {
+    pair,
+    userConnection,
+    userAccount,
+  };
+}
+
+// function mapDispatchToProps(dispatch) {
+//   return {};
+// }
+
+export default connect(mapStateToProps, null)(OpenPosition);

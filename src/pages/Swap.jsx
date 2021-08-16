@@ -3,45 +3,64 @@ import Header from "../components/common/Header/Header";
 import Input from "../components/Home/Input";
 import { connect } from "react-redux";
 import Back from "../components/common/Back";
-import { getAmountsOut } from "../actions/router";
+import { getAmountsOut, swap } from "../actions/router";
 import { BigNumber } from "ethers";
 
 class Swap extends Component {
   state = {
     amountOut: "",
     amountIn: "",
+    bamountIn: 0,
+    bamountOut: 0,
     loading: false,
+  };
+
+  getRoute = () => {
+    return [this.props.tokenA.address, this.props.tokenB.address];
   };
 
   getAmountOut = async (event) => {
     if (this.props.tokenA && this.props.tokenB && event.target.value != 0) {
+      const amountIn = event.target.value;
+      const path = this.getRoute();
+      const bamountIn = BigNumber.from(amountIn).mul(
+        BigNumber.from(10).pow(this.props.tokenA.decimal)
+      );
+
       this.setState({
         amountIn: event.target.value,
+        bamountIn: bamountIn,
         loading: true,
       });
 
-      const amountIn = event.target.value;
-      const path = [this.props.tokenA.address, this.props.tokenB.address];
       const amountOut = await getAmountsOut(
         path,
-        BigNumber.from(amountIn).mul(
-          BigNumber.from(10).pow(this.props.tokenA.decimal)
-        ),
+        bamountIn,
         this.props.userConnection
       );
 
-      console.log(amountOut);
+      let lastAmountOut = (
+        amountOut[amountOut.length - 1] /
+        10 ** this.props.tokenB.decimal
+      ).toFixed(3);
 
-      // let lastAmountOut =
-      //   amountOut[amountOut.length - 1] * 10 ** this.props.tokenB.decimal;
-      // this.setState({
-      //   amountOut: lastAmountOut,
-      //   loading: false,
-      // });
+      this.setState({
+        amountOut: lastAmountOut,
+        loading: false,
+        bamountOut: amountOut,
+      });
     }
   };
 
-  swap = async () => {};
+  swap = async () => {
+    swap(
+      this.getRoute(),
+      this.state.bamountIn.toString(),
+      (this.state.amountOut * 10 ** 18).toString(),
+      this.props.userConnection,
+      this.props.userAccount
+    );
+  };
 
   render() {
     return (

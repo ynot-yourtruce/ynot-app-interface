@@ -4,6 +4,7 @@ import PoolCard from "../components/MarketMakers/PoolCard";
 import Settings from "../components/MarketMakers/Settings";
 import { connect } from "react-redux";
 import Back from "../components/common/Back";
+import { placeOrder } from "../actions/trading";
 
 class Trading extends Component {
   state = {};
@@ -67,9 +68,12 @@ class Trading extends Component {
 
 function mapStateToProps(state) {
   const { pair } = state.tokenSelector;
+  const { userConnection, userAccount } = state.connection;
 
   return {
     pair,
+    userConnection,
+    userAccount,
   };
 }
 
