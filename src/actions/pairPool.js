@@ -4,12 +4,12 @@ import { approveERC20 } from "./erc20";
 import { BigNumber } from "ethers";
 
 
-export const addLiquidity = async(pair, web3, account) =>  {
+export const addLiquidity = async(amountIn, amountOut, pair, web3, account) =>  {
     try{
 
-        let amount1 = BigNumber.from(1000).mul(BigNumber.from(10).pow(18));
+        let amount1 = BigNumber.from(amountIn).mul(BigNumber.from(10).pow(18));
 
-        let amount2 = BigNumber.from(1000).mul(BigNumber.from(10).pow(18));
+        let amount2 = BigNumber.from(amountOut).mul(BigNumber.from(10).pow(18));
 
         const tokens = await getToken(pair, web3);
 

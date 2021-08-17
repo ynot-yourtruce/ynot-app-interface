@@ -4,6 +4,21 @@
         "ticker_2": "DT2",
         "logo_1": "/assets/img/D.png",
         "logo_2": "/assets/img/D2.png",
-        "address": "0x5AE5F3699d70B4C8310E33824fA28d04B6b41130"
+        "address": "0x5AE5F3699d70B4C8310E33824fA28d04B6b41130",
+        "tokens": ["0xef693c48200A1ccC7e5022d98c3A1E8e6C01645A", "0x19115627d5DA9455C32F1097A55ae923db9628Fa"],
+        "info" : [{
+        "name": "Demo Token",
+        "ticker": "DT",
+        "decimal": 18,
+        "logo": "/assets/img/D.png",
+        "address": "0xef693c48200A1ccC7e5022d98c3A1E8e6C01645A"
+    },
+    {
+        "name": "Demo Token 2",
+        "ticker": "DT2",
+        "decimal": 18,
+        "logo": "/assets/img/D2.png",
+        "address": "0x19115627d5DA9455C32F1097A55ae923db9628Fa"
+    }]
     }
 ]

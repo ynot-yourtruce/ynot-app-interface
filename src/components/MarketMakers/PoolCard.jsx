@@ -1,12 +1,30 @@
 import { Component } from "react";
 import OpenPosition from "./OpenPosition";
 import { connect } from "react-redux";
+import { getDetails } from "../../actions/trading";
+import { CONTRACT } from "../../config";
 
 class PoolCard extends Component {
   state = {
     positionModal: false,
     mode: null,
+    orderBooks: [],
   };
+
+  async componentDidMount() {
+    console.log("ooo");
+    const details = await getDetails(
+      this.props.pair,
+      CONTRACT.ORDEROOK,
+      this.props.userConnection
+    );
+
+    console.log(details);
+
+    this.setState({
+      orderBooks: details,
+    });
+  }
 
   toggleModal = (mode) => {
     this.setState({
@@ -26,16 +44,25 @@ class PoolCard extends Component {
           />
         )}
 
-        <div className="body">
-          <div className="slippage">
-            <div>300</div>
-            Address
-          </div>
-          <div className="amount">
-            <div>5 BTC</div>
-            Amount
-          </div>
-        </div>
+        {this.state.orderBooks.map((order, index) => {
+          if (order.balance > 0) {
+            return (
+              <div className="body">
+                <div className="slippage">
+                  {/* <div>300</div>
+            Address */}
+                </div>
+                <div className="amount">
+                  <div>
+                    {order.balance} {order.info.ticker}
+                  </div>
+                  Amount
+                </div>
+              </div>
+            );
+          }
+        })}
+
         <div className="action">
           <div className="btn" onClick={() => this.toggleModal("long")}>
             LONG
@@ -51,9 +78,12 @@ class PoolCard extends Component {
 
 function mapStateToProps(state) {
   const { pair } = state.tokenSelector;
+  const { userConnection, userAccount } = state.connection;
 
   return {
     pair,
+    userConnection,
+    userAccount,
   };
 }
 

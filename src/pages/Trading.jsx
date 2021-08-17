@@ -24,7 +24,7 @@ class Trading extends Component {
                   <div className="row">
                     <PoolCard />
                     <h2 className="mt-4 mb-4">Open Positions</h2>
-                    <div className="row">
+                    {/* <div className="row">
                       <div className="col-3">
                         <div className="nft swabox">
                           <div className="img">
@@ -53,7 +53,7 @@ class Trading extends Component {
                           <div className="btn block btn-small mt-2">Close</div>
                         </div>
                       </div>
-                    </div>
+                    </div> */}
                   </div>
                 )}
                 <br />

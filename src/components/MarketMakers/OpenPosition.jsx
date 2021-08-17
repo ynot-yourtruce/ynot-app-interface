@@ -4,15 +4,25 @@ import { placeOrder } from "../../actions/trading";
 import { connect } from "react-redux";
 
 class OpenPosition extends Component {
-  state = {};
+  state = {
+    amount: 0,
+  };
 
   addOrder = () => {
     placeOrder(
-      "0x198c09598595cB12E0966ef0Dec2aeCF7E836f54",
-      // "0x0B875130478443Ef762E8A8906891c274F426a7B",
+      this.props.mode == "long"
+        ? this.props.pair.tokens[1]
+        : this.props.pair.tokens[0],
+      this.state.amount,
       this.props.userConnection,
       this.props.userAccount
     );
+  };
+
+  handleAmount = (event) => {
+    this.setState({
+      amount: event.target.value,
+    });
   };
 
   render() {
@@ -32,7 +42,12 @@ class OpenPosition extends Component {
           <div className="body">
             <div className="input">
               <div className="top">
-                <input type="text" autoComplete="off" placeholder="1" />
+                <input
+                  type="text"
+                  autoComplete="off"
+                  placeholder="1"
+                  onChange={this.handleAmount}
+                />
                 <div className="ticker">
                   <img src={token.logo} alt="" />
                   <span>{token.ticker}</span>
